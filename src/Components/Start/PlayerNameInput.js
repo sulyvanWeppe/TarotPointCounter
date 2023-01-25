@@ -4,12 +4,12 @@ import React from "react";
 class PlayerNameInput extends React.Component {
     render() {
         return (
-            <div>
+            <li>
                 <label>
                     Player {this.props.id} name : 
                     <TextField id="outlined-basic" label="Name" variant="outlined" />
                 </label>
-            </div>
+            </li>
         );
     }
 }
