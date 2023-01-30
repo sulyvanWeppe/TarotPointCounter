@@ -3,17 +3,17 @@ import React from "react";
 import PlayersScore from "./PlayersScore";
 import RoundDetailsHeader from "./RoundDetailsHeader";
 
-class GameIn extends React.Component {
+class GameInPanel extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="gameInPanel">
                 <RoundDetailsHeader/>
-                <Divider/>
+                <Divider class="dividerGameInPanel"/>
                 <PlayersScore/>
             </div>
         );
     }
 }
 
-export default GameIn;
+export default GameInPanel;

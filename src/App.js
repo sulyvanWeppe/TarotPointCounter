@@ -15,12 +15,8 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="app">
                 <StartPanel/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
                 <GameInPanel/>
             </div>
         );

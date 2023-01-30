@@ -9,7 +9,7 @@ class StartPanel extends React.Component {
         return (
             <div>
                 <StartNewGameHeader/>
-                <Divider/>
+                <Divider class="dividerStartPanel"/>
                 <StartNewGamePlayersEntry/>
             </div>
         );

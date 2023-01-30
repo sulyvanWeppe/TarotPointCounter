@@ -1,12 +1,12 @@
-import { Button, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField } from "@mui/material";
+import { Button, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, Radio, RadioGroup, Select, TextField, Typography } from "@mui/material";
 import React from "react";
 
 class RoundDetailsHeader extends React.Component {
     render() {
         return (
-            <div>
+            <div className="roundDetailsHeader">
                 <label>
-                    Leader :
+                    <Typography variant="h6">Leader :</Typography>
                     <FormControl fullWidth>
                         <InputLabel id="leader-label">Player who lead the round</InputLabel>
                         <Select
@@ -23,9 +23,10 @@ class RoundDetailsHeader extends React.Component {
                     </FormControl>
                 </label>
                 <label>
-                    Passed :
+                    <Typography variant="h6">Passed :</Typography>
                     <FormControl fullWidth>
                         <RadioGroup
+                            row
                             name="radio-buttons-group"
                         >
                             <FormControlLabel value="yes" control={<Radio />} label="Yes" />
@@ -34,7 +35,7 @@ class RoundDetailsHeader extends React.Component {
                     </FormControl>
                 </label>
                 <label>
-                    Type :
+                    <Typography variant="h6">Type :</Typography>
                     <FormControl fullWidth>
                         <InputLabel id="type-label">Leader made ...</InputLabel>
                         <Select
@@ -52,7 +53,7 @@ class RoundDetailsHeader extends React.Component {
                     </FormControl>
                 </label>
                 <label>
-                    Points :
+                    <Typography variant="h6">Points :</Typography>
                     <TextField fullWidth id="outlined-basic" label="Points" variant="outlined" />
                 </label>
                 <Button variant="contained">Validate</Button>
