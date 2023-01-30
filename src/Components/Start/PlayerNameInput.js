@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import React from "react";
 
 class PlayerNameInput extends React.Component {
@@ -6,7 +6,7 @@ class PlayerNameInput extends React.Component {
         return (
             <li>
                 <label>
-                    Player {this.props.id} name : 
+                    <Typography variant="h6">Player {this.props.id} name :</Typography> 
                     <TextField id="outlined-basic" label="Name" variant="outlined" />
                 </label>
             </li>

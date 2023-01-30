@@ -10,7 +10,7 @@ class StartNewGamePlayersEntry extends React.Component {
         ));
 
         return (
-            <div>
+            <div className="startNewGamePlayersEntry">
                 <ul>{playersInputDisplay}</ul>
                 <Button variant="contained">Start</Button>
             </div>

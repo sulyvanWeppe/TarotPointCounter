@@ -10,9 +10,11 @@ class PlayersScore extends React.Component {
         ));
 
         return (
-            <ul>
-                {playersInputDisplay}
-            </ul>
+            <div className="playersScore">
+                <ul>
+                    {playersInputDisplay}
+                </ul>
+            </div>
             );
     }
 }

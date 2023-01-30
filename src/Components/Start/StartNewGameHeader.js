@@ -1,4 +1,4 @@
-import { Button, FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import { Button, FormControl, InputLabel, MenuItem, Select, Typography } from '@mui/material';
 import React from 'react';
 
 class StartNewGameHeader extends React.Component {
@@ -8,9 +8,9 @@ class StartNewGameHeader extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="startNewGameHeader">
                 <label>
-                    Number of Players :
+                    <Typography variant="h6">Number of Players :</Typography>
                     <FormControl fullWidth>
                         <InputLabel id="players-nr-label">Number</InputLabel>
                         <Select

@@ -1,5 +1,38 @@
-.App {
+.app {
     text-align: center;
-    width: 80%;
+    width: 40%;
     margin: auto;
+}
+
+.startNewGameHeader, .roundDetailsHeader {
+    margin-top: 7%;
+}
+
+.startNewGameHeader button, .roundDetailsHeader button{
+    margin-top: 4%;
+}
+
+.startNewGamePlayersEntry, .playersScore {
+    margin-top: 7%;
+}
+
+.startNewGamePlayersEntry button{
+    margin-top: 4%;
+}
+
+.startNewGamePlayersEntry li, .playersScore li {
+    margin-top: 4%;
+}
+
+.dividerStartPanel, .dividerGameInPanel{
+    margin-top: 6%;
+    margin-bottom: 6%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.startNewGameHeader h6, .startNewGamePlayersEntry h6, .roundDetailsHeader h6, .playersScore h6 {
+    margin-bottom: 2%;
 }
