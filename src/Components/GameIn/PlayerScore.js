@@ -7,8 +7,8 @@ class PlayerScore extends React.Component {
         return (
             <li>
                 <label>
-                    <Typography variant="h6">Player {this.props.id} score :</Typography> 
-                    <TextField id="outlined-basic" label="Score" variant="outlined" />
+                    <Typography variant="h6">{this.props.name}'s score :</Typography> 
+                    <TextField id="outlined-basic" label="Score" variant="outlined" value={this.props.score}/>
                 </label>
             </li>
         );

@@ -1,7 +1,11 @@
 .app {
     text-align: center;
-    width: 40%;
+    width: 80%;
     margin: auto;
+}
+
+.startPanel, .gameInPanel {
+    margin-top: 7%;
 }
 
 .startNewGameHeader, .roundDetailsHeader {
@@ -22,11 +26,6 @@
 
 .startNewGamePlayersEntry li, .playersScore li {
     margin-top: 4%;
-}
-
-.dividerStartPanel, .dividerGameInPanel{
-    margin-top: 6%;
-    margin-bottom: 6%;
 }
 
 ul {
