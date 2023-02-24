@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { countMisere, countRound } from "../Services/PointsCounterService";
 import { checkPlayersNames } from "../Services/ValidationFormService";
@@ -42,6 +43,12 @@ class Panel extends React.Component {
             return alert("Players' names are not valid");
         }
         else {
+            axios.post("http://localhost:8080/game",{nrPlayers: this.state.players.length})
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(err => {alert("Error while creating the new game")});
+            
             this.setState({isGameStarted: true});
         }
     }
