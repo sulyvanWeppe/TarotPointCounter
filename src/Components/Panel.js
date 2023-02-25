@@ -3,6 +3,7 @@ import React from "react";
 import { countMisere, countRound } from "../Services/PointsCounterService";
 import { checkPlayersNames } from "../Services/ValidationFormService";
 import GameInPanel from "./GameIn/GameInPanel";
+import MainDrawer from "./MainDrawer";
 import StartPanel from "./Start/StartPanel";
 
 class Panel extends React.Component {
@@ -114,6 +115,7 @@ class Panel extends React.Component {
 
         return (
             <div className="mainPanel">
+                <MainDrawer/>
                 {display}
             </div>
         )
