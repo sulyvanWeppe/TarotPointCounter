@@ -11,6 +11,7 @@ class Panel extends React.Component {
         super(props);
 
         this.state = {
+            gameUuid: null,
             isGameStarted: false,
             players: new Array(4).fill(null)
         };
@@ -43,9 +44,11 @@ class Panel extends React.Component {
             return alert("Players' names are not valid");
         }
         else {
+            //Create the game in the DB
+            var gameUuid;
             axios.post("http://localhost:8080/game",{nrPlayers: this.state.players.length})
             .then(response => {
-                let gameUuid = response.data;
+                gameUuid = response.data;
                 
                 let playersScorePostRequest = {
                     gameUuid: gameUuid,
@@ -53,10 +56,14 @@ class Panel extends React.Component {
                 };
                 axios.post("http://localhost:8080/scores", playersScorePostRequest)
                     .catch(err => {alert("Error while creating the new game")});
+
+                
+                this.setState({
+                    gameUuid: gameUuid,
+                    isGameStarted: true
+                });
             })
             .catch(err => {alert("Error while creating the new game")});
-            
-            this.setState({isGameStarted: true});
         }
     }
 
@@ -64,9 +71,19 @@ class Panel extends React.Component {
         var newPlayers = [...this.state.players];
         countRound(newPlayers,round);
     
-        this.setState({
-            players: newPlayers
-        });
+        //Update scores in the DB
+        let playersScorePatchRequest = {
+            gameUuid: this.state.gameUuid,
+            playersScore: newPlayers
+        };
+
+        axios.patch("http://localhost:8080/scores", playersScorePatchRequest)
+            .then(response => {this.setState({
+                    players: newPlayers
+                 })
+                }
+            )
+            .catch(err => {alert("Error when trying to update the scores in the DB")});
     }
 
     handleValidateAddMisere = (miserePlayer) => {
