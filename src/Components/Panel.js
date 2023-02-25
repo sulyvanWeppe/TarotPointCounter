@@ -45,7 +45,14 @@ class Panel extends React.Component {
         else {
             axios.post("http://localhost:8080/game",{nrPlayers: this.state.players.length})
             .then(response => {
-                console.log(response.data);
+                let gameUuid = response.data;
+                
+                let playersScorePostRequest = {
+                    gameUuid: gameUuid,
+                    playersScore: this.state.players
+                };
+                axios.post("http://localhost:8080/scores", playersScorePostRequest)
+                    .catch(err => {alert("Error while creating the new game")});
             })
             .catch(err => {alert("Error while creating the new game")});
             
