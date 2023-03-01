@@ -5,6 +5,7 @@ import { checkPlayersNames } from "../Services/ValidationFormService";
 import GameInPanel from "./GameIn/GameInPanel";
 import MainDrawer from "./Drawer/MainDrawer";
 import StartPanel from "./Start/StartPanel";
+import AllGames from "./AllGames/AllGames";
 
 class Panel extends React.Component {
 
@@ -151,7 +152,7 @@ class Panel extends React.Component {
                 }
                 break;
             case 'All Games':
-                display=null;
+                display=<AllGames/>;
                 break;
             default:
                 break;
